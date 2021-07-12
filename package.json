@@ -9,7 +9,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^1.18.1",
     "express": "^4.17.1",
-    "heroku": "^7.56.0"
+    "heroku": "^7.56.0",
+    "supabase": "^0.4.4"
   }
 }
