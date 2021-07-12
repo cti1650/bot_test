@@ -2,13 +2,14 @@
   "name": "sample",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "kitutune <p.kitutune@gmail.com>",
+  "author": "",
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "heroku": "^7.56.0"
   }
 }
