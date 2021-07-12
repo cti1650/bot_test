@@ -9,5 +9,3 @@ Heroku の URL を https://{Name of your app}.herokuapp.com/webhook の URL 形�
 https://bottukuruyo.herokuapp.com/webhook
 
 heroku config:set LINE_ACCESS_TOKEN=
-
-heroku config:set LINE_ACCESS_TOKEN=
