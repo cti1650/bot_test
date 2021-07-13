@@ -11,3 +11,13 @@ https://bottukuruyo.herokuapp.com/webhook
 heroku config:set LINE_ACCESS_TOKEN=
 
 heroku config:set LINE_ACCESS_TOKEN=tE47Uyr6a3TcNW42VFeB9mRG9DIl+5O2L7Yq2lCmY5jLiw6/8chV7ZFTyOyI5uR26pKdpBT4aRBNWxjisogeSM9y4VQTcQVdFUgMV1f8knV3pHp4B7LQxjwe2kFjVHDwmwDwilB+gqDyHNUKt7XcygdB04t89/1O/w1cDnyilFU=
+
+```
+const { createClient } = require('@supabase/supabase-js');
+const supabaseUrl = 'https://zpqdwrwmgualomsihngl.supabase.co'
+const supabaseKey = process.env.SUPABASE_KEY
+const supabase = createClient(supabaseUrl, supabaseKey)
+let { data: test, error } = supabase
+  .from('test')
+  .select('*')
+```

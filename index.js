@@ -1,19 +1,13 @@
 const https = require('https');
 const express = require('express');
-const { createClient } = require('@supabase/supabase-js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 const TOKEN = process.env.LINE_ACCESS_TOKEN;
 
-const supabaseUrl = 'https://zpqdwrwmgualomsihngl.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
-
-let { data: test, error } = await supabase
-  .from('test')
-  .select('*')
-
-console.log(data);
+const { createClient } = require('@supabase/supabase-js');
+const supabaseUrl = 'https://zpqdwrwmgualomsihngl.supabase.co';
+const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoic2VydmljZV9yb2xlIiwiaWF0IjoxNjIyOTQ2NDQwLCJleHAiOjE5Mzg1MjI0NDB9.LeVGocBXQcO4yBwgn1k8u-alFQ09u6dX-U6g_VSGCN0';
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 app.use(express.json());
 app.use(
@@ -25,6 +19,19 @@ app.use(
 app.get('/', (req, res) => {
   res.sendStatus(200);
 });
+
+app.get('/supa', (req, res) => {
+  supabase
+  .from('codes')
+  .select('*')
+  .then((item)=>{
+    res.json(item);
+  }).catch(()=>{
+    res.sendStatus(400);
+  })
+});
+
+
 
 app.post('/webhook', function (req, res) {
   res.send('HTTP POST request sent to the webhook URL!');
